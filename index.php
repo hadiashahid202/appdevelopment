@@ -24,16 +24,17 @@
         $prices =[
             [
                 'title' => "Basic",
-                'head' => "<h2>$200</h2>",
+                'head' =>   "$200",
                 'button' => "Buy Now",
                 'class'  => "basic",
                 'classes' => "",
+               
                 'list' => array("Landing Page","Visual Branding")
                
             ],
             [
                 'title' => "Standard",
-                'head' => "<h2>$500</h2>",
+                'head' =>   "$500",
                 'button' => "Buy Now",
                 'class'  => "standard",
                 'classes' => "ribbon ribbon-top-right",
@@ -42,7 +43,7 @@
             ],
             [
                 'title' => "Premium",
-                'head' => "<h2>$1k</h2>",
+                'head' =>   "$1k",
                 'button' => "Buy Now",
                 'class'  => "premium",
                 'classes' => "",
@@ -65,7 +66,13 @@
                         <hr>
                         <h2><?php echo $price['head']; ?></h2>
          				<ul>
-         					<li><i class="fa-solid fa-circle-check"></i> <?php echo $price['list']; ?></li>
+                            <?php
+                            foreach ($price['list'] as $item) {
+                            ?>
+         					<li><i class="fa-solid fa-circle-check"></i> <?php echo $item; ?></li>
+                            <?php
+                                } 
+                            ?>
          				</ul>
          				<div class="package-btn">
          					<a><?php echo $price['button']; ?></a>
