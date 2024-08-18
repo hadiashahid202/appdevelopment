@@ -3,7 +3,7 @@
 **********************************/
 
 body{
-	background: grey;
+	background: #E9E9E9;
 	font-family: Montserrat;
 }
 
@@ -16,6 +16,13 @@ body{
 	padding: 120px;
 }
 
+.page-section h2{
+	font-size: 72px;
+	font-weight: 700;
+	line-height: 87.77px;
+	text-align: center;
+}
+
 .page-section img {
 	max-width: 100%;
 }
@@ -25,25 +32,21 @@ body{
 **********************************/
 
 /*pricing section css*/
-#pricing-section{
-	background: #E9E9E9;
+#packages-section{
+	padding: 120px 0px;
 }
 
-#pricing-section h2{
-	font-size: 72px;
-	font-weight: 700;
-	line-height: 87.77px;
-	text-align: center;
-    margin-bottom: 40px;
+#packages-section h2{
+   margin-bottom: 70px;
 }
 
-.pricing-table{
+.packages-table{
 	display: flex;
 	column-gap: 70px;
 	justify-content: center;
 }
 
-.pricing{
+.package{
 	padding: 40px;
 	background: #FFFFFF;
 	box-shadow: 0px 7px 15px 0px #00000026;
@@ -56,7 +59,7 @@ body{
 	position: relative;
 }
 
-.pricing h3{
+.package .title{
 	font-size: 36px;
 	font-weight: 500;
 	line-height: 43.88px;
@@ -64,12 +67,17 @@ body{
 	margin-bottom: 20px;
 }
 
-.pricing hr{
+.standard .title{
+	font-size: 40px;
+}
+
+.package hr{
 	width: 250px;
+	border: 1px solid #000000;
 	margin-bottom: 30px;
 }
 
-.pricing h2{
+.package .head{
 	font-size: 48px;
 	font-weight: 600;
 	line-height: 58.51px;
@@ -77,13 +85,23 @@ body{
     margin-bottom: 30px;
 }
 
-.standard h2{
+.standard .head{
 	margin-bottom: 40px;
 }
 
-.pricing ul{
-	line-height: 150%;
+.package ul{
+	line-height: 200%;
 	list-style: none;
+}
+
+.package ul li{
+	font-size: 18px;
+	font-weight: 400;
+	text-align: left;
+}
+
+.standard ul li{
+	font-size: 20.59px;
 }
 
 .basic ul{
@@ -98,16 +116,22 @@ body{
 	margin-bottom: 60px;
 }
 
-.pricing .package-btn a{
+.package .package-btn{
+	text-align: center;
+}
+
+.package .package-btn a{
 	background: #FF6060;
 	padding: 15px 30px;
 	color: #fff;
 	border-radius: 40px;
 	cursor: pointer;
+	text-decoration: none;
+    display: inline-block;
 }
 
-.pricing .package-btn{
-	text-align: center;
+.standard .package-btn a{
+	padding: 15px 40px;
 }
 
 .ribbon {
