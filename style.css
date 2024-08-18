@@ -227,3 +227,21 @@ body{
   top: 30px;
   transform: rotate(45deg);
 }
+
+/*footer section*/
+
+#footer-section{
+    background: #282828;
+    padding: 120px 0px;
+}
+
+#footer-section h2{
+	margin-bottom: 20px;
+	color: white;
+}
+
+#footer-section .assets{
+	display: flex;
+	justify-content: center;
+	column-gap: 80px;
+}

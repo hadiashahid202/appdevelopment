@@ -23,6 +23,8 @@
     <?php
         require_once "partials/services.php";
         require_once "partials/packages.php";
+        require_once "partials/footer.php";
+
     ?>
 
     </div> <!-- closing page wrapper -->

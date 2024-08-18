@@ -30,7 +30,7 @@
 		]
 	];
 ?>
-          <!-- pricing section -->
+        <!-- pricing section -->
 
 <div id="packages-section" class="page-section">
 	<h2><?php echo $heading; ?></h2>
@@ -48,17 +48,17 @@
 					    foreach ($price['list'] as $item) {
 					?>
 						<li><i class="fa-solid fa-circle-check"></i> <?php echo $item; ?></li>
-		<?php
-			}
-		?>
-				</ul>
+					<?php
+						}
+					?>
+			    </ul>
 				<div class="package-btn">
 					<a href="#"><?php echo $price['button']; ?></a>
 				</div>
 			</div>
-			<?php
-				}
-			?>
+		<?php
+			}
+		?>
 	</div><!--  closing pricing-table -->
 
 </div> <!-- closing pricing-section -->
