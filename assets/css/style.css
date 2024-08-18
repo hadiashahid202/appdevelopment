@@ -3,7 +3,7 @@
 **********************************/
 
 body{
-	background: #E9E9E9;
+	background: grey;
 	font-family: Montserrat;
 }
 
@@ -16,13 +16,6 @@ body{
 	padding: 120px;
 }
 
-.page-section h2{
-	font-size: 72px;
-	font-weight: 700;
-	line-height: 87.77px;
-	text-align: center;
-}
-
 .page-section img {
 	max-width: 100%;
 }
@@ -31,12 +24,69 @@ body{
 * indiviual styles
 **********************************/
 
+/*about-me section*/
+#aboutme-section{
+	background: #F1F1F1;
+	display: flex;
+	column-gap: 250px;
+}
+
+#aboutme-section h2{
+	font-size: 72px;
+	font-weight: 700;
+	line-height: 87.77px;
+	text-align: left;
+    margin-bottom: 90px;
+}
+
+.media{
+	display: flex;
+	column-gap: 30px;
+	margin-bottom: 50px;
+}
+
+.social{
+	column-gap: 55px;
+	margin-bottom: 60px;
+}
+
+.checkout{
+    column-gap: 50px;
+    margin-bottom: 0px;
+}
+
+.content h3{
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 48.76px;
+	text-align: left;
+}
+
+.content p{
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 29.26px;
+	text-align: left;
+}
+
+.image-section img{
+	width: 556px;
+	position: absolute;
+	top: -65px;
+}
+
+/*services section css*/
+
 #services-section{
 	background: #FF6060;
 }
 
 #services-section h2{
 	color: #fff;
+	font-size: 72px;
+	font-weight: 700;
+	line-height: 87.77px;
+	text-align: center;
     margin-bottom: 90px;
 }
 
@@ -73,23 +123,26 @@ body{
 	margin-bottom: 30px;
 }
 
-
 /*pricing section css*/
-#packages-section{
-	padding: 120px 0px;
+#pricing-section{
+	background: #E9E9E9;
 }
 
-#packages-section h2{
-   margin-bottom: 70px;
+#pricing-section h2{
+	font-size: 72px;
+	font-weight: 700;
+	line-height: 87.77px;
+	text-align: center;
+    margin-bottom: 40px;
 }
 
-.packages-table{
+.pricing-table{
 	display: flex;
 	column-gap: 70px;
 	justify-content: center;
 }
 
-.package{
+.pricing{
 	padding: 40px;
 	background: #FFFFFF;
 	box-shadow: 0px 7px 15px 0px #00000026;
@@ -102,7 +155,7 @@ body{
 	position: relative;
 }
 
-.package .title{
+.pricing h3{
 	font-size: 36px;
 	font-weight: 500;
 	line-height: 43.88px;
@@ -110,17 +163,12 @@ body{
 	margin-bottom: 20px;
 }
 
-.standard .title{
-	font-size: 40px;
-}
-
-.package hr{
+.pricing hr{
 	width: 250px;
-	border: 1px solid #000000;
 	margin-bottom: 30px;
 }
 
-.package .head{
+.pricing h2{
 	font-size: 48px;
 	font-weight: 600;
 	line-height: 58.51px;
@@ -128,23 +176,13 @@ body{
     margin-bottom: 30px;
 }
 
-.standard .head{
+.standard h2{
 	margin-bottom: 40px;
 }
 
-.package ul{
-	line-height: 200%;
+.pricing ul{
+	line-height: 150%;
 	list-style: none;
-}
-
-.package ul li{
-	font-size: 18px;
-	font-weight: 400;
-	text-align: left;
-}
-
-.standard ul li{
-	font-size: 20.59px;
 }
 
 .basic ul{
@@ -159,22 +197,16 @@ body{
 	margin-bottom: 60px;
 }
 
-.package .package-btn{
-	text-align: center;
-}
-
-.package .package-btn a{
+.pricing .package-btn a{
 	background: #FF6060;
 	padding: 15px 30px;
 	color: #fff;
 	border-radius: 40px;
 	cursor: pointer;
-	text-decoration: none;
-    display: inline-block;
 }
 
-.standard .package-btn a{
-	padding: 15px 40px;
+.pricing .package-btn{
+	text-align: center;
 }
 
 .ribbon {

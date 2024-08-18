@@ -21,6 +21,7 @@
     <div id="page-wrap">
 
     <?php
+        require_once "partials/services.php";
         require_once "partials/packages.php";
     ?>
 

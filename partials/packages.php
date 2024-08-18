@@ -48,9 +48,9 @@
 					    foreach ($price['list'] as $item) {
 					?>
 						<li><i class="fa-solid fa-circle-check"></i> <?php echo $item; ?></li>
-					<?php
-						}
-					?>
+		<?php
+			}
+		?>
 				</ul>
 				<div class="package-btn">
 					<a href="#"><?php echo $price['button']; ?></a>
