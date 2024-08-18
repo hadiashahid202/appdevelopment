@@ -84,6 +84,7 @@
 
             </div><!--  closing pricing-table -->
         </div> <!-- closing pricing-section -->
-    </div> <!-- closing wrapper -->
+
+    </div> <!-- closing page wrapper -->
 </body>
 </html>
