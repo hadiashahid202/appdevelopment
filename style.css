@@ -76,7 +76,8 @@ body{
 
 /*pricing section css*/
 #packages-section{
-	padding: 120px 0px;
+	padding: 120px 0px 150px 0px;
+
 }
 
 #packages-section h2{
@@ -240,7 +241,7 @@ body{
 	color: white;
 }
 
-#footer-section .assets{
+#footer-section .footer-icons{
 	display: flex;
 	justify-content: center;
 	column-gap: 80px;

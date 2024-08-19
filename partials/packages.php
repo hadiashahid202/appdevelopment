@@ -6,7 +6,7 @@ $prices  = [
 		'head'    => "$200",
 		'button'  => "Buy Now",
 		'classes' => "basic",
-		'popular' => true,
+		'popular' =>  false,
 		'list'    => array( "Landing Page", "Visual Branding" )
 
 	],
@@ -15,7 +15,7 @@ $prices  = [
 		'head'    => "$500",
 		'button'  => "Buy Now",
 		'classes' => "standard",
-		'popular' => true,
+		'popular' =>  true,
 		'list'    => array( "Landing Page", "Visual Branding", "Web design" )
 
 	],
@@ -24,20 +24,20 @@ $prices  = [
 		'head'    => "$1k",
 		'button'  => "Buy Now",
 		'classes' => "premium",
-		'popular' => false,
+		'popular' =>  false,
 		'list'    => array( "Landing Page", "Visual Branding", "Web design", "Market Research" )
 
 	]
 ];
 ?>
-<!-- pricing section -->
+<!-- packages section -->
 
 <div id="packages-section" class="page-section">
     <h2><?php echo $heading; ?></h2>
     <div class="packages-table">
 		<?php
-		foreach ( $prices as $price ) {
-			?>
+		    foreach ( $prices as $price ) {
+		?>
             <div class="package <?php echo $price['classes']; echo ($price['popular']) ? ' popular' : ''; ?>">
 				<?php
 				if ( $price['popular'] ) {
@@ -63,6 +63,6 @@ $prices  = [
 			<?php
 		}
 		?>
-    </div><!--  closing pricing-table -->
+    </div><!--  closing packages-table -->
 
-</div> <!-- closing pricing-section -->
+</div> <!-- closing packages-section -->

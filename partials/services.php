@@ -3,17 +3,17 @@
     $services = [
         [
         'title' => "Web Design",
-        'img'   => "assets/img/icons/web-design",
+        'img'   => "web-design",
         'desc'  => "Web design for the new businesses. Modern, classy & sophisticated look."
         ],
         [
         'title' => "App Design",
-        'img'   => "assets/img/icons/app-design",
+        'img'   => "app-design",
         'desc'  => "Mobile app design for the new businesses. Modern, classy & sophisticated look."
         ],
         [
         'title' => "UI/UX Design",
-        'img'   => "assets/img/icons/uiux-design",
+        'img'   => "uiux-design",
         'desc'  => "UI/UX design for the new businesses. Modern, classy & sophisticated look."
         ]
     ];
@@ -22,13 +22,13 @@
 
 <div id="services-section" class="page-section">
     <h2><?php echo $heading; ?></h2>
-    <div class = "services">
+    <div class="services">
         <?php
           foreach($services as $service){
         ?>
-          <div class = "service">
+          <div class="service">
             <h3><?php echo $service['title']; ?></h3>
-            <img src = "<?php echo $service['img']; ?>.png">
+            <img src="assets/img/icons/<?php echo $service['img']; ?>.png">
             <p><?php echo $service['desc']; ?></p>
           </div>
         <?php
