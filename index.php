@@ -22,7 +22,6 @@
 
     <?php
         require_once "partials/herosection.php";
-
         require_once "partials/aboutme.php";
         require_once "partials/services.php";
         require_once "partials/packages.php";
