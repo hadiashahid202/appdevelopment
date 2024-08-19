@@ -31,6 +31,56 @@ body{
 * indiviual styles
 **********************************/
 
+/*about-me section*/
+
+#aboutme-section{
+	background: #F1F1F1;
+	display: flex;
+	column-gap: 250px;
+}
+
+#aboutme-section .container h2{
+	margin-bottom: 90px;
+}
+
+.media{
+	display: flex;
+	column-gap: 30px;
+	margin-bottom: 50px;
+}
+
+.social{
+	column-gap: 55px;
+	margin-bottom: 60px;
+}
+
+.checkout{
+    column-gap: 50px;
+    margin-bottom: 0px;
+}
+
+.content h3{
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 48.76px;
+	text-align: left;
+}
+
+.content p{
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 29.26px;
+	text-align: left;
+}
+
+.image-section img{
+	width: 556px;
+	position: absolute;
+	top: -65px;
+}
+
+/*services section*/
+
 #services-section{
 	background: #FF6060;
 }
