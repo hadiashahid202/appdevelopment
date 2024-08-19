@@ -37,6 +37,7 @@ body{
 	background: #F1F1F1;
 	display: flex;
 	column-gap: 250px;
+	position: relative;
 }
 
 #aboutme-section .container h2{
