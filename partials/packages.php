@@ -6,7 +6,7 @@ $prices  = [
 		'head'    => "$200",
 		'button'  => "Buy Now",
 		'classes' => "basic",
-		'popular' => false,
+		'popular' => true,
 		'list'    => array( "Landing Page", "Visual Branding" )
 
 	],
@@ -38,7 +38,7 @@ $prices  = [
 		<?php
 		foreach ( $prices as $price ) {
 			?>
-            <div class="package <?php echo $price['classes'] ?>">
+            <div class="package <?php echo $price['classes']; echo ($price['popular']) ? ' popular' : ''; ?>">
 				<?php
 				if ( $price['popular'] ) {
 					?><div class="ribbon ribbon-top-right"><span></span></div><?php
