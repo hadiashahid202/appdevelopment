@@ -25,6 +25,7 @@ body{
 
 .page-section img {
 	max-width: 100%;
+	height: auto;
 }
 
 /**********************************
@@ -41,10 +42,17 @@ body{
 
 .header{
 	display: flex;
-	column-gap: 240px;
 	align-items: center;
 	margin-bottom: 140px;
-	justify-content: center;
+	justify-content: space-around;
+}
+
+#check{
+	display: none;
+}
+
+.header .checkbtn{
+	display: none;
 }
 
 .header h3{
@@ -69,6 +77,10 @@ body{
 	font-weight: 500;
 	line-height: 21.94px;
 	text-align: left;
+}
+
+.header ul li:hover{
+	border-bottom: 2px solid #fff;
 }
 
 .header ul li a{
@@ -156,7 +168,13 @@ body{
     position: relative;
 	box-shadow: 7px 7px 5px 0px #00000080;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-around;
+}
+
+.menu .menu-content{
+	display: flex;
+	column-gap: 20px;
+	align-items: center;
 }
 
 .menu-section .photoshop{
@@ -167,6 +185,7 @@ body{
 	top: 50px;
 	right: 60px;
 	rotate: 10deg;
+	z-index: 1;
 }
 
 .menu-section .figma{
@@ -220,7 +239,7 @@ body{
 .image-section img{
 	width: 556px;
 	position: absolute;
-	top: -65px;
+	bottom: 0px;
 }
 
 /*services section*/
@@ -439,4 +458,174 @@ body{
 	display: flex;
 	justify-content: center;
 	column-gap: 80px;
+}
+
+
+/*media query*/
+
+@media only screen and (min-device-width: 810px) and (max-device-width: 1024px) and (orientation: portrait) {
+    
+    /*hero-section media query*/
+
+    #about{
+	   background-position: center center;
+	   background-repeat: no-repeat;
+	   background-size: cover;
+	} 
+    
+    .header .checkbtn{
+		display: block;
+		font-size: 2rem;
+		width: 100px;
+	}
+
+    .header h3{
+  	    font-size: 30px;
+    }
+
+	.header ul{
+		position: fixed;
+		top: 80px;
+		left: -100%;
+		background: #FF6060;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        transition: all .5s;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+        padding-top: 50px;
+        z-index: 2;
+	}
+    
+    .header ul li a{
+    	font-size: 30px;
+    }
+    
+    .content-section h1{
+    	font-size: 50px;
+		font-weight: 700;
+		line-height: 60px;
+		text-align: center;
+		margin-bottom: 30px; 
+    }
+
+	#check:checked ~ ul{
+	 	left: 0;
+	}
+
+	.menu{
+		column-gap: 0px;
+	    padding: 20px 10px;
+	    height: auto;
+	}
+
+	.menu-content img{
+		max-width: 50%;
+	}
+
+	.menu-section .photoshop{
+		left: 30px;
+	}
+
+	.menu-section .adobe{
+		top: 50px;
+		right: 15px;
+	}
+
+	.menu-section .figma{
+	    right: 30px;
+	}
+
+
+	/*aboutme-section media query*/
+	
+	#aboutme-section{
+	 	flex-wrap: wrap;
+		column-gap: 0px;
+		padding: 60px 0px 60px 40px;
+
+	}
+	.container h2{
+		margin-bottom: 40px;
+		font-size: 60px;
+	}
+		
+	.content h3{
+		font-size: 32px;
+	}
+
+	.media img{
+		max-width: 30%;
+
+	}
+    
+	.content p{
+		font-size: 22px;
+		
+	}
+
+	.image-section img{
+		max-width: 45%;
+		bottom: 0px;
+		position: absolute;
+	}
+
+	/*services-section*/
+
+	#services-section{
+		padding: 60px 40px;
+   }
+
+	#services-section h2{
+		font-size: 55px;
+   	    margin-bottom: 40px;
+	}
+	
+	.services{
+		flex-wrap: wrap;
+		row-gap: 40px;
+		flex-direction: column;
+	}
+
+	.service p{
+		text-align: center;
+	}
+
+	/*packages-section*/
+
+	#packages-section{
+		padding: 60px 120px;
+	}
+
+	.packages-table{
+		flex-wrap: wrap;
+		row-gap: 40px;
+		flex-direction: column;
+	}
+
+    .packages-table hr{
+    	width: 100%;
+    }
+
+    /*footer-section*/
+
+	#footer{
+        padding: 70px;
+	}
+
+	#footer h2{
+		font-size: 60px;
+
+	} 
+
+	#footer .assets{
+		column-gap: 60px;
+	}
+
+	#footer .assets img{
+		max-width: 50%;
+
+	}
 }

@@ -3,9 +3,9 @@
     $title     = "Design like a pro <br> and make money";
     $paragraph = "This is a extensive program for people <br> who want to use their design skills to earn more";
     $link      = "Order";
-    $img       = "Vector";
+    $img       = "vector";
     $desc      =  "order here";
-    $listitems = [
+    $list_items = [
         'list' => array( "Home", "About", "Services", "Pricing", "Contact")
     ];
     $icons = [
@@ -35,13 +35,13 @@
          [
           'image'  => "adobe",
           'desc'  => "Illustrator",
-          'cross-img'  => "adobe-cross",
+          'cross-img'  => "cross",
           'classes'   => "adobe"
         ],
          [
           'image'  => "Figma",
           'desc'  => "Figma",
-          'cross-img'  => "figma-cross",
+          'cross-img'  => "cross",
           'classes'   => "figma"
         ]
     ];
@@ -50,10 +50,14 @@
      <!-- about section -->
 <div id="about" class="page-section">
       <div class="header">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fa fa-bars"></i>
+        </label>
         <h3><a href="#"><?php echo $heading; ?></a></h3>
         <ul>
           <?php
-            foreach($listitems['list'] as $item){
+            foreach($list_items['list'] as $item){
           ?>
             <li><a href="#"><?php echo $item; ?></a></li>
           <?php
@@ -87,9 +91,13 @@
             foreach($socials as $social){
           ?>
             <div class="menu <?php echo $social['classes']; ?>">
-              <img src="assets/img/icons/<?php echo $social['image']; ?>.png">
-              <p><?php echo $social['desc']; ?></p>
-              <img src="assets/img/icons/<?php echo $social['cross-img']; ?>.png">
+              <div class="menu-content">
+                <img src="assets/img/icons/<?php echo $social['image']; ?>.png">
+                <p><?php echo $social['desc']; ?></p>
+              </div>
+              <div class="cross-image">
+                <img src="assets/img/icons/<?php echo $social['cross-img']; ?>.png">
+              </div>
             </div>
           <?php
             }

@@ -21,8 +21,8 @@
     <div id="page-wrap">
 
     <?php
-        require_once "partials/herosection.php";
-        require_once "partials/aboutme.php";
+        require_once "partials/hero-section.php";
+        require_once "partials/about-me.php";
         require_once "partials/services.php";
         require_once "partials/packages.php";
         require_once "partials/footer.php";
