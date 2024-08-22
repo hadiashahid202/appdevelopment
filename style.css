@@ -499,6 +499,7 @@ body{
 	.header ul{
 		position: fixed;
 		top: 80px;
+		left: -100%;
 		background: #FF6060;
         text-align: center;
         height: 100vh;
