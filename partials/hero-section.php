@@ -58,9 +58,9 @@
         <ul class="sidebar" id="sidebar">
           <?php
             foreach($list_items['list'] as $index => $item){
-            $link = $list_items['link'][$index];
+            $links = $list_items['link'][$index];
           ?>
-            <li><a href="#<?php echo $link; ?>" class="closebtn" onclick="closeSidebar()"><?php echo $item; ?></a></li>
+            <li><a href="#<?php echo $links; ?>" class="closebtn" onclick="closeSidebar()"><?php echo $item; ?></a></li>
           <?php
             }
           ?>
