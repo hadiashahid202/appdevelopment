@@ -6,7 +6,8 @@
     $img       = "vector";
     $desc      =  "order here";
     $list_items = [
-        'list' => array( "Home", "About", "Services", "Pricing", "Contact")
+        'list' => array( "Home", "About", "Services", "Pricing", "Contact"),
+        'link' => array( "about", "aboutme-section", "services-section", "packages-section", "footer-section")
     ];
     $icons = [
         [
@@ -50,16 +51,16 @@
      <!-- about section -->
 <div id="about" class="page-section">
       <div class="header">
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
+        <label for="" class="checkbtn" onclick="toggleSidebar()">
           <i class="fa fa-bars"></i>
         </label>
         <h3><a href="#"><?php echo $heading; ?></a></h3>
-        <ul>
+        <ul class="sidebar" id="sidebar">
           <?php
-            foreach($list_items['list'] as $item){
+            foreach($list_items['list'] as $index => $item){
+            $link = $list_items['link'][$index];
           ?>
-            <li><a href="#"><?php echo $item; ?></a></li>
+            <li><a href="#<?php echo $link; ?>" class="closebtn" onclick="closeSidebar()"><?php echo $item; ?></a></li>
           <?php
             }
           ?>

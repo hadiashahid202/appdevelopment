@@ -29,5 +29,7 @@
     ?>
 
     </div> <!-- closing page wrapper -->
+
+    <script type="text/javascript" src="assets/js/index.js"></script>
 </body>
 </html>
