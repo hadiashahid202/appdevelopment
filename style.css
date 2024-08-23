@@ -47,10 +47,6 @@ body{
 	justify-content: space-around;
 }
 
-#check{
-	display: none;
-}
-
 .header .checkbtn{
 	display: none;
 }
