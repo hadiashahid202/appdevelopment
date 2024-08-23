@@ -1,6 +1,6 @@
 <?php
     $heading   = "Khan Design";
-    $title     = "Design like a pro <br> and make money";
+    $title     = "DESIGN LIKE A PRO <br> and make money";
     $paragraph = "This is a extensive program for people <br> who want to use their design skills to earn more";
     $link      = "Order";
     $img       = "vector";

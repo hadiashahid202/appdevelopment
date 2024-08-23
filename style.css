@@ -133,6 +133,7 @@ body{
 }
 
 .content-section .package-btn p{
+	font-family: Single Day;
 	font-size: 18px;
 	font-weight: 400;
 	top: 20px;
@@ -158,6 +159,7 @@ body{
 	font-weight: 400;
 	line-height: 28.13px;
 	text-align: left;
+	font-family: Roboto;
 }
 
 .menu{
@@ -521,6 +523,10 @@ body{
 		margin-bottom: 30px; 
     }
 
+    .content-section .package-btn p{
+		top: 18px;
+	}
+
 	.menu{
 		column-gap: 0px;
 	    padding: 20px 10px;
@@ -690,7 +696,7 @@ body{
     }
 
     .content-section h1{
-		font-size: 40px;
+		font-size: 35px;
 		margin-bottom: 30px;
 		line-height: 120%;
     }
@@ -700,6 +706,9 @@ body{
 	   font-size: 15px;
     }
 
+    .content-section .package-btn p{
+		top: 18px;
+	}
 
 	.menu{
 		column-gap: 30px;
