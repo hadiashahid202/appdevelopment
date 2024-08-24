@@ -30,6 +30,7 @@
         require_once "partials/packages.php";
         require_once "partials/footer.php";
         require_once "partials/process_contact.php";
+        require_once "partials/database.php";
     ?>
 
     </div> <!-- closing page wrapper -->
