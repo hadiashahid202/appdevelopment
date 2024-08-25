@@ -6,7 +6,8 @@
     <title>APP-DEV</title>
     
     	<!-- Load website styles -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="./assets/cs/style.css">
+     <link rel="stylesheet" href="./assets/cs/media-queries.css">
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	
 	<!-- Load websites fonts -->
