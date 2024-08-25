@@ -7,7 +7,7 @@
     
     	<!-- Load website styles -->
 	<link rel="stylesheet" type="text/css" href="./assets/cs/style.css">
-     <link rel="stylesheet" href="./assets/cs/media-queries.css">
+     <link rel="stylesheet" href="./assets/cs/mediaqueries.css">
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	
 	<!-- Load websites fonts -->
@@ -20,6 +20,9 @@
 
     <!-- Load icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div id="page-wrap">
@@ -30,6 +33,7 @@
         require_once "partials/services.php";
         require_once "partials/packages.php";
         require_once "partials/footer.php";
+        require_once "partials/exportdatabase.php";
         require_once "partials/process_contact.php";
         require_once "partials/database.php";
     ?>

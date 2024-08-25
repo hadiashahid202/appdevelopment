@@ -51,7 +51,7 @@
      <!-- about section -->
 <div id="about" class="page-section">
       <div class="header">
-        <label for="" class="checkbtn" onclick="toggleSidebar()">
+        <label class="checkbtn">
           <i class="fa fa-bars"></i>
         </label>
         <h3><a href="#"><?php echo $heading; ?></a></h3>
@@ -60,7 +60,7 @@
             foreach($list_items['list'] as $index => $item){
             $links = $list_items['link'][$index];
           ?>
-            <li><a href="#<?php echo $links; ?>" class="closebtn" onclick="closeSidebar()"><?php echo $item; ?></a></li>
+            <li><a href="#<?php echo $links; ?>" class="closebtn"><?php echo $item; ?></a></li>
           <?php
             }
           ?>

@@ -1,3 +1,23 @@
+/*for larger desktop*/
+
+@media (max-width: 1279px){
+
+	/*aboutme-section*/
+
+	#aboutme-section{
+		column-gap: 120px;
+	}
+
+	#services-section{
+		padding: 100px;
+	}
+
+	.service h3{
+		font-size: 30px;
+	}
+}
+
+
 /*for larger tablets and small laptops*/
 
 @media (max-width: 1024px) {
@@ -243,6 +263,10 @@
 		flex-direction: column;
 	}
 
+	.service h3{
+		font-size: 30px;
+	}
+
 	.service p{
 		text-align: center;
 	}
@@ -282,6 +306,89 @@
 		max-width: 50%;
 
 	}
+}
+
+/*for small tablets*/
+
+@media (max-width: 639px){
+
+	/*hero-section*/
+
+	.package-btn{
+    	margin-bottom: 20px;
+    }
+
+	.menu-section{
+    	flex-wrap: wrap;
+    }
+
+	.menu{
+		column-gap: 30px;
+	    position: static;
+	    margin-bottom: 20px;
+	    width: 300px;
+	}
+
+	.menu .menu-content{
+		column-gap: 40px;
+	}
+
+	.menu-content img{
+		max-width: 30%;
+	}
+
+    .menu-content p{
+	    font-size: 22px;
+    }
+
+	.menu-section .photoshop{
+		rotate: 0deg;
+	}
+
+	.menu-section .adobe{
+		rotate: 0deg;
+	    z-index: 0;
+	}
+
+	.menu-section .figma{
+		rotate: 0deg;
+	}
+
+	.menu-content .cross img{
+		max-width: 20px;
+	}
+    
+    /*aboutme-section*/
+
+    #aboutme-section{
+    	flex-direction: column;
+    }
+
+	.image-section{
+		margin-bottom: -65px;
+		margin-top: -40px;
+		text-align: center;
+	}
+
+	.image-section img{
+		max-width: 100%;
+		position: static;
+	}
+
+	/*services-section*/
+
+	#services-section{
+		padding: 80px;
+	}
+
+	#services-section h2{
+		font-size: 40px;
+	}
+
+	.service h3{
+		font-size: 40px;
+	}
+
 }
 
 
