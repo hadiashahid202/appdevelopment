@@ -1,11 +1,10 @@
 <?php
-$servername = "localhost";
+    $servername = "localhost";
     $username = "root";
     $password = ""; 
     $dbname = "businessdb";
     $conn  = "";
 
-   
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $sql  = "SELECT * FROM users;";
     $result  = mysqli_query($conn, $sql);

@@ -7,7 +7,7 @@ if ($mysqli->connect_error) {
 }
 
 // Read SQL File
-$sql_file = 'partials/businessdb.sql';
+$sql_file = 'businessdb.sql';
 $query = file_get_contents($sql_file);
 
 if ($query === false) {

@@ -459,11 +459,14 @@
 		top: 18px;
 	}
 
+	.menu-section{
+	    flex-wrap: nowrap;
+	}
+
 	.menu{
 		column-gap: 30px;
 	    padding: 5px 10px;
 	    height: auto;
-	    
 	}
 
 	.menu .menu-content{
