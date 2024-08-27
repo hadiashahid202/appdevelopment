@@ -7,8 +7,7 @@
 
     try{
         $conn = mysqli_connect($servername, $username, $password, $dbname);
-    }
-    catch(mysqli_sql_exception){
+    } catch(mysqli_sql_exception){
         echo "you are not registered";
     }
 
