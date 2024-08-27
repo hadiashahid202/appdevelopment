@@ -1,22 +1,31 @@
 <?php
-    $heading  = "Services I provide";
-    $services = [
-        [
-        'title' => "Web Design",
-        'img'   => "web-design",
-        'desc'  => "Web design for the new businesses. Modern, classy & sophisticated look."
-        ],
-        [
-        'title' => "App Design",
-        'img'   => "app-design",
-        'desc'  => "Mobile app design for the new businesses. Modern, classy & sophisticated look."
-        ],
-        [
-        'title' => "UI/UX Design",
-        'img'   => "uiux-design",
-        'desc'  => "UI/UX design for the new businesses. Modern, classy & sophisticated look."
-        ]
-    ];
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "businessdb";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$heading = "Services I provide";
+$services = [];
+
+$sql = "SELECT title, image AS img, description AS `desc` FROM services";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $services[] = $row;
+    }
+} else {
+    echo "No services available.";
+}
+
+$conn->close();
 ?>
 
 
@@ -28,11 +37,11 @@
         ?>
           <div class="service">
             <h3><?php echo $service['title']; ?></h3>
-            <img src="assets/img/icons/<?php echo $service['img']; ?>.png">
+            <img src="assets/img/icons/<?php echo $service['img']; ?>.png" alt="<?php echo $service['title']; ?>">
             <p><?php echo $service['desc']; ?></p>
           </div>
         <?php
           }
         ?>
     </div> <!-- closing services -->
-</div>    <!--  closing services-section -->
+</div> <!-- closing services-section -->

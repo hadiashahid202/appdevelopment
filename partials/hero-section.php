@@ -6,8 +6,8 @@
     $img       = "vector";
     $desc      =  "order here";
     $list_items = [
-        'list' => array( "Home", "About", "Services", "Pricing", "Contact"),
-        'link' => array( "about", "aboutme-section", "services-section", "packages-section", "footer-section")
+        'list' => array( "Home", "About", "Services", "Pricing", "Contact", "Dashboard"),
+        'link' => array( "#about", "#aboutme-section", "#services-section", "#packages-section", "#footer-section", "partials/dashboard.php")
     ];
     $icons = [
         [
@@ -60,7 +60,7 @@
             foreach($list_items['list'] as $index => $item){
             $links = $list_items['link'][$index];
           ?>
-            <li><a href="#<?php echo $links; ?>" class="closebtn"><?php echo $item; ?></a></li>
+            <li><a href="<?php echo $links; ?>" class="closebtn"><?php echo $item; ?></a></li>
           <?php
             }
           ?>
