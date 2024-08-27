@@ -1,12 +1,10 @@
 <?php
-// Connect to the Database
 $mysqli = new mysqli("localhost", "root", "", "businessdb");
 
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
 
-// Read SQL File
 $sql_file = 'businessdb.sql';
 $query = file_get_contents($sql_file);
 
@@ -14,11 +12,8 @@ if ($query === false) {
     die("Error: Could not read the SQL file.");
 }
 
-// Execute SQL Query
 if ($mysqli->multi_query($query)) {
-    // Process each result set
     do {
-        // Store first result set
         if ($result = $mysqli->store_result()) {
             $result->free();
         }
@@ -28,6 +23,5 @@ if ($mysqli->multi_query($query)) {
     echo "Error executing SQL file: " . $mysqli->error;
 }
 
-// Close the Connection
 $mysqli->close();
 ?>
