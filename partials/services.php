@@ -28,7 +28,6 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-
 <div id="services-section" class="page-section">
     <h2><?php echo $heading; ?></h2>
     <div class="services">
