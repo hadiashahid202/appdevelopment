@@ -151,6 +151,10 @@
 	   background-repeat: no-repeat;
 	   background-size: cover;
 	} 
+
+	.header{
+		position: relative;
+	}
     
     .header .checkbtn{
 		display: block;
@@ -407,6 +411,7 @@
 
 	.header{
 		margin-bottom: 60px;
+		position: relative;
 	}
 
 	.header .checkbtn{
@@ -608,6 +613,10 @@
 
     /*hero-section*/
 
+    .header{
+    	position: relative;
+    }
+
     
     .header .checkbtn{
 		display: block;
@@ -774,6 +783,10 @@
 
 /*for very small mobile devices*/
 @media (max-width:322px){
+
+	.header{
+		position: relative;
+	}
 
 	.header .checkbtn{
 		display: block;
