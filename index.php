@@ -28,14 +28,14 @@
     <div id="page-wrap">
 
     <?php
-        require_once "partials/hero-section.php";
-        require_once "partials/about-me.php";
-        require_once "partials/services.php";
-        require_once "partials/packages.php";
-        require_once "partials/footer.php";
-        require_once "partials/exportdatabase.php";
-        require_once "partials/process_contact.php";
-        require_once "partials/database.php";
+    require_once "partials/database.php";
+    require_once "partials/process_contact.php";
+    require_once "partials/hero-section.php";
+    require_once "partials/about-me.php";
+    require_once "partials/services.php";
+    require_once "partials/packages.php";
+    require_once "partials/footer.php";
+    //        require_once "partials/exportdatabase.php";
     ?>
 
     </div> <!-- closing page wrapper -->
