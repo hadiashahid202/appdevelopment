@@ -38,7 +38,7 @@ $prices  = [
 		<?php
 		    foreach ( $prices as $price ) {
 		?>
-            <div class="package <?php echo $price['classes']; echo ($price['popular']) ? ' popular' : ''; ?>">
+            <div class="package <?php echo $price['classes']; echo ($price['popular']) ? ' popular' : '';?>">
 				<?php
 				if ( $price['popular'] ) {
 					?><div class="ribbon ribbon-top-right"><span></span></div><?php
