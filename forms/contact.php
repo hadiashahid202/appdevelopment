@@ -39,7 +39,6 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
-        <!-- Title -->
         <h1 class="text-2xl font-bold mb-6 text-gray-800">Create Contacts</h1>
         <?php if (!empty($message)) : ?>
             <div class="mb-4 p-4 text-white <?php echo strpos($message, 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md">
