@@ -7,7 +7,7 @@
     $desc      =  "order here";
     $list_items = [
         'list' => array( "Home", "About", "Services", "Pricing", "Contact", "Dashboard"),
-        'link' => array( "#about", "partials/aboutme.php", "#services-section", "partials/pricing.php", "partials/contact.php", "partials/dashboard.php")
+        'link' => array( "partials/add_about_section.php", "partials/aboutme.php", "#services-section", "partials/pricing.php", "partials/contact.php", "partials/dashboard.php")
     ];
     $icons = [
         [
