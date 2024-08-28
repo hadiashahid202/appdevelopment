@@ -1,68 +1,49 @@
 <?php
-$heading = "Pricing";
-$prices  = [
-	[
-		'title'   => "Basic",
-		'head'    => "$200",
-		'button'  => "Buy Now",
-		'classes' => "basic",
-		'popular' =>  false,
-		'list'    => array( "Landing Page", "Visual Branding" )
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$database = "businessdb";
 
-	],
-	[
-		'title'   => "Standard",
-		'head'    => "$500",
-		'button'  => "Buy Now",
-		'classes' => "standard",
-		'popular' =>  true,
-		'list'    => array( "Landing Page", "Visual Branding", "Web design" )
+	$conn = new mysqli($servername, $username, $password, $database);
 
-	],
-	[
-		'title'   => "Premium",
-		'head'    => "$1k",
-		'button'  => "Buy Now",
-		'classes' => "premium",
-		'popular' =>  false,
-		'list'    => array( "Landing Page", "Visual Branding", "Web design", "Market Research" )
+	if ($conn->connect_error) {
+	    die("Connection failed: " . $conn->connect_error);
+	}
 
-	]
-];
+	$sql = "SELECT title, price, button_text, classes, popular, features FROM packages";
+	$result = $conn->query($sql);
 ?>
-<!-- packages section -->
 
 <div id="packages-section" class="page-section">
-    <h2><?php echo $heading; ?></h2>
+    <h2>Pricing</h2>
     <div class="packages-table">
-		<?php
-		    foreach ( $prices as $price ) {
-		?>
-            <div class="package <?php echo $price['classes']; echo ($price['popular']) ? ' popular' : '';?>">
-				<?php
-				if ( $price['popular'] ) {
-					?><div class="ribbon ribbon-top-right"><span></span></div><?php
-				}
-				?>
-                <h3 class="title"><?php echo $price['title']; ?></h3>
-                <hr>
-                <h3 class="head"><?php echo $price['head']; ?></h3>
-                <ul>
-					<?php
-					foreach ( $price['list'] as $item ) {
-						?>
-                        <li><i class="fa-solid fa-circle-check"></i> <?php echo $item; ?></li>
-						<?php
-					}
-					?>
-                </ul>
-                <div class="package-btn">
-                    <a href="#"><?php echo $price['button']; ?></a>
+        <?php
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $features = explode(',', $row['features']);
+                ?>
+                <div class="package <?php echo $row['classes']; echo ($row['popular']) ? ' popular' : '';?>">
+                    <?php if ($row['popular']) { ?>
+                        <div class="ribbon ribbon-top-right"><span></span></div>
+                    <?php } ?>
+                    <h3 class="title"><?php echo $row['title']; ?></h3>
+                    <hr>
+                    <h3 class="head"><?php echo $row['price']; ?></h3>
+                    <ul>
+                        <?php foreach ($features as $feature) { ?>
+                            <li><i class="fa-solid fa-circle-check"></i> <?php echo $feature; ?></li>
+                        <?php } ?>
+                    </ul>
+                    <div class="package-btn">
+                        <a href="#"><?php echo $row['button_text']; ?></a>
+                    </div>
                 </div>
-            </div>
-			<?php
-		}
-		?>
+                <?php
+            }
+        } else {
+            echo "<p>No packages found.</p>";
+        }
+        $conn->close();
+        ?>
     </div><!--  closing packages-table -->
-
-</div> <!-- closing packages-section -->
+</div><!-- closing packages-section -->
