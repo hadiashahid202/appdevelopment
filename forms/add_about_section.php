@@ -120,61 +120,61 @@ $conn->close();
             <!-- Heading -->
             <div class="mb-4">
                 <label for="heading" class="block text-gray-700">Heading</label>
-                <input type="text" id="heading" name="heading" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
+                <input type="text" id="heading" name="heading" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required>
             </div>
 
             <!-- Title -->
             <div class="mb-4">
                 <label for="title" class="block text-gray-700">Title</label>
-                <textarea id="title" name="title" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required></textarea>
+                <textarea id="title" name="title" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required></textarea>
             </div>
 
             <!-- Paragraph -->
             <div class="mb-4">
                 <label for="paragraph" class="block text-gray-700">Paragraph</label>
-                <textarea id="paragraph" name="paragraph" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required></textarea>
+                <textarea id="paragraph" name="paragraph" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required></textarea>
             </div>
 
             <!-- Link -->
             <div class="mb-4">
                 <label for="link" class="block text-gray-700">Button Text</label>
-                <input type="text" id="link" name="link" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
+                <input type="text" id="link" name="link" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required>
             </div>
 
             <!-- Image Name -->
             <div class="mb-4">
                 <label for="img" class="block text-gray-700">Button Image (Name)</label>
-                <input type="text" id="img" name="img" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required>
+                <input type="text" id="img" name="img" class="mt-1 border block w-full border-gray-300 rounded-md shadow-sm" required>
             </div>
 
             <!-- Button Description -->
             <div class="mb-4">
                 <label for="desc" class="block text-gray-700">Button Description</label>
-                <textarea id="desc" name="desc" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" required></textarea>
+                <textarea id="desc" name="desc" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required></textarea>
             </div>
 
             <!-- Menu Items -->
             <div class="mb-4">
                 <label for="menu_items" class="block text-gray-700">Menu Items (Comma Separated)</label>
-                <textarea id="menu_items" name="menu_items" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Home, About, Services, Pricing, Contact, Dashboard" required></textarea>
+                <textarea id="menu_items" name="menu_items" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" placeholder="Home, About, Services, Pricing, Contact, Dashboard" required></textarea>
             </div>
 
             <!-- Menu Links -->
             <div class="mb-4">
                 <label for="menu_links" class="block text-gray-700">Menu Links (Comma Separated)</label>
-                <textarea id="menu_links" name="menu_links" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="#home, #about, #services, #pricing, #contact, #dashboard" required></textarea>
+                <textarea id="menu_links" name="menu_links" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" placeholder="#home, #about, #services, #pricing, #contact, #dashboard" required></textarea>
             </div>
 
             <!-- Icon Items -->
             <div class="mb-4">
                 <label for="icons" class="block text-gray-700">Icons (Comma Separated)</label>
-                <textarea id="icons" name="icons" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="facebook-icon, instagram-icon, linkedin-icon" required></textarea>
+                <textarea id="icons" name="icons" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" placeholder="facebook-icon, instagram-icon, linkedin-icon" required></textarea>
             </div>
 
             <!-- Icon Links -->
             <div class="mb-4">
                 <label for="icon_links" class="block text-gray-700">Icon Links (Comma Separated)</label>
-                <textarea id="icon_links" name="icon_links" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="https://facebook.com, https://instagram.com, https://linkedin.com" required></textarea>
+                <textarea id="icon_links" name="icon_links" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" placeholder="https://facebook.com, https://instagram.com, https://linkedin.com" required></textarea>
             </div>
 
             <!-- Social Media Items -->
