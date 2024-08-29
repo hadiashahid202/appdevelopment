@@ -80,7 +80,7 @@ body{
 }
 
 .header ul li:hover{
-	/*border-bottom: 2px solid #fff;*/
+	border-bottom: 2px solid #fff;
 }
 
 .header ul li a{
