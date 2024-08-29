@@ -210,6 +210,7 @@ body{
 
 #aboutme-section .container h2{
 	margin-bottom: 90px;
+	text-align: left;
 }
 
 .media{
@@ -445,7 +446,7 @@ body{
 
 .ribbon-top-right span {
   left: -25px;
-  top: 30px;
+  top: 0px;
   transform: rotate(45deg);
 }
 

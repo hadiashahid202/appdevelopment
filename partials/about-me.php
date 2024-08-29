@@ -27,26 +27,26 @@
 ?>
 
 <!-- Who am I section -->
-<div id="aboutme-section" class="page-section bg-gray-50 py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-8 text-gray-800"><?php echo $heading; ?></h2>
-    <div class="media-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div id="aboutme-section" class="page-section">
+  <div class="container">
+    <h2><?php echo $heading; ?></h2>
+    <div class="media-section ">
       <?php
         foreach($items as $item){
       ?>
-        <div class="<?php echo $item['classes']; ?> bg-white p-6 rounded-lg shadow-md">
-          <img src="assets/img/icons/<?php echo $item['img']; ?>.png" class="w-16 h-16 mb-4">
+        <div class="<?php echo $item['classes']; ?> ">
+          <img src="assets/img/icons/<?php echo $item['img']; ?>.png" >
           <div class="content">
-            <h3 class="text-xl font-semibold mb-2"><?php echo $item['title']; ?></h3>
-            <p class="text-gray-600"><?php echo $item['desc']; ?></p>
+            <h3><?php echo $item['title']; ?></h3>
+            <p><?php echo $item['desc']; ?></p>
           </div>
         </div> <!-- closing media -->
       <?php
         }
       ?>
     </div> <!-- closing media-section -->
-    <div class="image-section mt-12 text-center">
-      <img src="assets/img/icons/<?php echo $image; ?>.png" class="mx-auto">
+    <div class="image-section">
+      <img src="assets/img/icons/<?php echo $image; ?>.png">
     </div>
   </div> <!-- closing container -->
 </div> <!-- closing aboutme-section -->

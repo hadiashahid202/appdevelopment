@@ -23,7 +23,7 @@ $result = $conn->query($sql);
         ?>
           <div class="service">
             <h3><?php echo $service['title']; ?></h3>
-            <img src="assets/img/icons/<?php echo $service['image']; ?>.png">
+            <img src="assets/img/icons/<?php echo $service['image']; ?>.png"  class="mx-auto">
             <p><?php echo $service['description']; ?></p>
           </div>
         <?php

@@ -1,35 +1,4 @@
-<?php
-    $servername = "localhost";
-    $username = "root"; 
-    $password = ""; 
-    $database = "businessdb"; 
 
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    $message = "";
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        $img = isset($_POST['img']) ? $_POST['img'] : '';
-        $link = isset($_POST['link']) ? $_POST['link'] : '';
-
-        if (empty($img) || empty($link)) {
-            $message = "Error: All fields are required.";
-        } else {
-            $sql = "INSERT INTO contacts (img, link) VALUES ('$img', '$link')";
-
-            if ($conn->query($sql) === TRUE) {
-                $message = "New contact added successfully";
-            } else {
-                $message = "Error: " . $sql . "<br>" . $conn->error;
-            }
-        }
-    }
-
-    $conn->close();
-?>
 
 <!DOCTYPE html>
 <html>
