@@ -1,4 +1,45 @@
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root"; // Change if necessary
+$password = ""; // Change if necessary
+$database = "businessdb"; // Replace with your database name
 
+// Create a connection
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$message = ""; // Initialize message variable
+$heading = "Contacts";
+
+// Ensure form data is submitted via POST method
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect form data
+    $img = isset($_POST['img']) ? $_POST['img'] : '';
+    $link = isset($_POST['link']) ? $_POST['link'] : '';
+
+    // Check if all required fields are filled
+    if (empty($img) || empty($link)) {
+        $message = "Error: All fields are required.";
+    } else {
+        // Insert data into the contacts table
+        $sql = "INSERT INTO contacts (img, link) VALUES ('$img', '$link')";
+
+        if ($conn->query($sql) === TRUE) {
+            $message = "New contact added successfully";
+        } else {
+            $message = "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+}
+
+// Close connection
+$conn->close();
+?>
 
 <!DOCTYPE html>
 <html>
