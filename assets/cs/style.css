@@ -446,7 +446,7 @@ body{
 
 .ribbon-top-right span {
   left: -25px;
-  top: 0px;
+  top: 25px;
   transform: rotate(45deg);
 }
 
