@@ -12,6 +12,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$message = "";
+
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve and sanitize POST data
@@ -83,9 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 }
 
-                echo "Data inserted successfully.";
+                $message = "Data inserted successfully.";
             } else {
-                echo "Error: " . $stmt->error;
+                $message = "Error: " . $stmt->error;
             }
 
             // Close the main statement
@@ -96,6 +98,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Please fill in all required fields.";
     }
+      // Redirect with query parameter for the message
+    header("Location: dashboard.php?page=hero-section&message=" . urlencode($message));
+    exit(); // Ensure no further code is executed after redirection
 }
 
 // Close the connection
@@ -112,105 +117,126 @@ $conn->close();
     <title>Add About Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-8">
+<body class="bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 p-8">
 
-    <div class="max-w-lg mx-auto bg-white p-6 rounded shadow">
-        <h1 class="text-xl font-bold mb-4">Add About Section</h1>
-        <form action="add_about_section.php" method="post">
-            <!-- Heading -->
-            <div class="mb-4">
-                <label for="heading" class="block text-gray-700">Heading</label>
-                <input type="text" id="heading" name="heading" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required>
-            </div>
+    <div class="max-w-7xl mt-5 mb-5 mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-300">
+     <!-- Display message if it exists -->
+        <?php if (isset($_GET['message'])): ?>
+          <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md text-center">
+            <?php echo htmlspecialchars($_GET['message']); ?>
+          </div>
+        <?php endif; ?>
+        <h1 style="color: #fe8444;" class="text-4xl font-bold text-center text-gray-800 mb-8">Add Hero Section</h1>
+        <form action="add_about_section.php?page=hero-section" method="post" class="space-y-8 max-w-1240 mx-auto">
+            <!-- Heading and Title -->
+            <div class="grid gap-6 mb-6 md:grid-cols-2">
+                <!-- Heading -->
+                <div class="flex flex-col">
+                    <label for="heading" class="text-xl font-medium text-gray-800">Heading</label>
+                    <input type="text" id="heading" name="heading" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition ease-in-out duration-300" required>
+                </div>
 
-            <!-- Title -->
-            <div class="mb-4">
-                <label for="title" class="block text-gray-700">Title</label>
-                <textarea id="title" name="title" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required></textarea>
+                <!-- Title -->
+                <div class="flex flex-col">
+                    <label for="title" class="text-xl font-medium text-gray-800">Title</label>
+                    <input id="title" name="title" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition ease-in-out duration-300" rows="3" required></input>
+                </div>
             </div>
 
             <!-- Paragraph -->
-            <div class="mb-4">
-                <label for="paragraph" class="block text-gray-700">Paragraph</label>
-                <textarea id="paragraph" name="paragraph" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required></textarea>
+            <div class="flex flex-col mb-6">
+                <label for="paragraph" class="text-xl font-medium text-gray-800">Paragraph</label>
+                <textarea id="paragraph" name="paragraph" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 resize-none transition ease-in-out duration-300" rows="4" required></textarea>
             </div>
 
-            <!-- Link -->
-            <div class="mb-4">
-                <label for="link" class="block text-gray-700">Button Text</label>
-                <input type="text" id="link" name="link" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required>
+            <!-- Button Text, Image, and Description in a Row -->
+            <div class="flex flex-wrap gap-6 mb-6">
+                <!-- Button Text -->
+                <div class="flex-1 flex flex-col">
+                    <label for="link" class="text-xl font-medium text-gray-800">Button Text</label>
+                    <input type="text" id="link" name="link" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition ease-in-out duration-300" required>
+                </div>
+
+                <!-- Button Image -->
+                <div class="flex-1 flex flex-col">
+                    <label for="img" class="text-xl font-medium text-gray-800">Button Image (Name)</label>
+                    <input type="text" id="img" name="img" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition ease-in-out duration-300" required>
+                </div>
+
+                <!-- Button Description -->
+                <div class="flex-2 flex flex-col">
+                    <label for="desc" class="text-xl font-medium text-gray-800">Button Description</label>
+                    <input id="desc" name="desc" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg resize-none shadow-sm focus:ring-blue-500 focus:border-blue-500 transition ease-in-out duration-300" rows="3" required></input>
+                </div>
             </div>
 
-            <!-- Image Name -->
-            <div class="mb-4">
-                <label for="img" class="block text-gray-700">Button Image (Name)</label>
-                <input type="text" id="img" name="img" class="mt-1 border block w-full border-gray-300 rounded-md shadow-sm" required>
+
+            <!-- Menu Items and Links -->
+            <div class="grid gap-6 mb-6 md:grid-cols-2">
+                <!-- Menu Items -->
+                <div class="flex flex-col">
+                    <label for="menu_items" class="text-xl font-medium text-gray-800">Menu Items (Comma Separated)</label>
+                    <textarea id="menu_items" name="menu_items" class="mt-1 block w-full px-4 py-2 border resize-none border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition ease-in-out duration-300" placeholder="Home, About, Services, Pricing, Contact, Dashboard" rows="2" required></textarea>
+                </div>
+
+                <!-- Menu Links -->
+                <div class="flex flex-col">
+                    <label for="menu_links" class="text-xl font-medium text-gray-800">Menu Links (Comma Separated)</label>
+                    <textarea id="menu_links" name="menu_links" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 resize-none transition ease-in-out duration-300" placeholder="#home, #about, #services, #pricing, #contact, #dashboard" rows="2" required></textarea>
+                </div>
             </div>
 
-            <!-- Button Description -->
-            <div class="mb-4">
-                <label for="desc" class="block text-gray-700">Button Description</label>
-                <textarea id="desc" name="desc" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" required></textarea>
-            </div>
+            <!-- Icons and Icon Links -->
+            <div class="grid gap-6 mb-6 md:grid-cols-2">
+                <!-- Icons -->
+                <div class="flex flex-col">
+                    <label for="icons" class="text-xl font-medium text-gray-800">Icons (Comma Separated)</label>
+                    <textarea id="icons" name="icons" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 resize-none transition ease-in-out duration-300" placeholder="facebook-icon, instagram-icon, linkedin-icon" rows="2" required></textarea>
+                </div>
 
-            <!-- Menu Items -->
-            <div class="mb-4">
-                <label for="menu_items" class="block text-gray-700">Menu Items (Comma Separated)</label>
-                <textarea id="menu_items" name="menu_items" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" placeholder="Home, About, Services, Pricing, Contact, Dashboard" required></textarea>
-            </div>
-
-            <!-- Menu Links -->
-            <div class="mb-4">
-                <label for="menu_links" class="block text-gray-700">Menu Links (Comma Separated)</label>
-                <textarea id="menu_links" name="menu_links" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" placeholder="#home, #about, #services, #pricing, #contact, #dashboard" required></textarea>
-            </div>
-
-            <!-- Icon Items -->
-            <div class="mb-4">
-                <label for="icons" class="block text-gray-700">Icons (Comma Separated)</label>
-                <textarea id="icons" name="icons" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" placeholder="facebook-icon, instagram-icon, linkedin-icon" required></textarea>
-            </div>
-
-            <!-- Icon Links -->
-            <div class="mb-4">
-                <label for="icon_links" class="block text-gray-700">Icon Links (Comma Separated)</label>
-                <textarea id="icon_links" name="icon_links" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" placeholder="https://facebook.com, https://instagram.com, https://linkedin.com" required></textarea>
+                <!-- Icon Links -->
+                <div class="flex flex-col">
+                    <label for="icon_links" class="text-xl font-medium text-gray-800">Icon Links (Comma Separated)</label>
+                    <textarea id="icon_links" name="icon_links" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 resize-none transition ease-in-out duration-300" placeholder="https://facebook.com, https://instagram.com, https://linkedin.com" rows="2" required></textarea>
+                </div>
             </div>
 
             <!-- Social Media Items -->
-            <div class="mb-4">
-                <label for="social_media" class="block text-gray-700">Social Media Items</label>
-                <div id="social_media_container">
-                    <div class="flex mb-4">
-                        <input type="text" name="social_media[0][image]" class="mt-1 block w-1/4 border-gray-300 rounded-md shadow-sm" placeholder="Image Name" required>
-                        <input type="text" name="social_media[0][desc]" class="mt-1 block w-1/4 border-gray-300 rounded-md shadow-sm mx-2" placeholder="Description" required>
-                        <input type="text" name="social_media[0][cross_img]" class="mt-1 block w-1/4 border-gray-300 rounded-md shadow-sm mx-2" placeholder="Cross Image Name" required>
-                        <input type="text" name="social_media[0][classes]" class="mt-1 block w-1/4 border-gray-300 rounded-md shadow-sm" placeholder="Classes" required>
+            <div class="flex flex-col mb-6">
+                <label for="social_media" class="text-xl font-medium text-gray-800">Social Media Items</label>
+                <div id="social_media_container" class="space-y-4">
+                    <div class="grid gap-4 grid-cols-1 md:grid-cols-4">
+                        <input type="text" name="social_media[0][image]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Image Name" required>
+                        <input type="text" name="social_media[0][desc]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Description" required>
+                        <input type="text" name="social_media[0][cross_img]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Cross Image Name" required>
+                        <input type="text" name="social_media[0][classes]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Classes" required>
                     </div>
                 </div>
-                <button type="button" id="add_social_media" class="bg-green-500 text-white px-4 py-2 rounded">Add Another</button>
+                <button type="button" id="add_social_media" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-700 focus:outline-none bg-gradient-to-t from-[#f77062] via-[#f77062] to-[#fe8444] focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Add Another</button>
             </div>
 
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+            <!-- Centered Submit Button -->
+            <div class="flex justify-center mt-8">
+                <button type="submit" class="bg-blue-600 text-white px-8 py-4 rounded-xl shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 bg-gradient-to-t from-[#f77062] via-[#f77062] to-[#fe8444]">Submit</button>
+            </div>
         </form>
-
-        <script>
-            let counter = 1;
-            document.getElementById('add_social_media').addEventListener('click', () => {
-                const container = document.getElementById('social_media_container');
-                const newDiv = document.createElement('div');
-                newDiv.classList.add('flex', 'mb-4');
-                newDiv.innerHTML = `
-                    <input type="text" name="social_media[${counter}][image]" class="mt-1 block w-1/4 border-gray-300 rounded-md shadow-sm" placeholder="Image Name" required>
-                    <input type="text" name="social_media[${counter}][desc]" class="mt-1 block w-1/4 border-gray-300 rounded-md shadow-sm mx-2" placeholder="Description" required>
-                    <input type="text" name="social_media[${counter}][cross_img]" class="mt-1 block w-1/4 border-gray-300 rounded-md shadow-sm mx-2" placeholder="Cross Image Name" required>
-                    <input type="text" name="social_media[${counter}][classes]" class="mt-1 block w-1/4 border-gray-300 rounded-md shadow-sm" placeholder="Classes" required>
-                `;
-                container.appendChild(newDiv);
-                counter++;
-            });
-        </script>
     </div>
 
+    <script>
+        let counter = 1;
+        document.getElementById('add_social_media').addEventListener('click', () => {
+            const container = document.getElementById('social_media_container');
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('grid', 'gap-4', 'grid-cols-1', 'md:grid-cols-4', 'mb-4');
+            newDiv.innerHTML = `
+                <input type="text" name="social_media[${counter}][image]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Image Name" required>
+                <input type="text" name="social_media[${counter}][desc]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Description" required>
+                <input type="text" name="social_media[${counter}][cross_img]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Cross Image Name" required>
+                <input type="text" name="social_media[${counter}][classes]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Classes" required>
+            `;
+            container.appendChild(newDiv);
+            counter++;
+        });
+    </script>
 </body>
 </html>

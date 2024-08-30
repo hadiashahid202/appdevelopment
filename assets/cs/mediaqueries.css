@@ -15,6 +15,12 @@
 	.service h3{
 		font-size: 30px;
 	}
+     
+    /*packages-section*/
+	.features-btn{
+	row-gap: 80px;
+    }
+
 }
 
 
@@ -105,7 +111,7 @@
 		font-size: 38px;
 	}
 
-	.basic ul{
+	/*.basic ul{
 		margin-bottom: 90px;
 	}
 
@@ -115,7 +121,10 @@
 
 	.premium ul{
 		margin-bottom: 40px;
-	}
+	}*/
+	.features-btn{
+	row-gap: 80px;
+    }
 
 	/*footer-section*/
 
@@ -291,6 +300,10 @@
     	width: 100%;
     }
 
+    .features-btn{
+	row-gap: 80px;
+    }
+
     /*footer-section*/
 
 	#footer-section{
@@ -392,6 +405,11 @@
 	.service h3{
 		font-size: 40px;
 	}
+
+	/*packages-section*/
+	.features-btn{
+	row-gap: 90px;
+    }
 
 }
 
@@ -587,6 +605,10 @@
     	width: 100%;
     }
 
+	.features-btn{
+	row-gap: 90px;
+    }
+
     /*footer section*/
 
 	#footer-section{
@@ -758,6 +780,10 @@
 	#packages-section h2{
 		font-size: 50px;
 	}
+
+	.features-btn{
+	row-gap: 90px;
+    }
 
     /*footer-section*/
 

@@ -34,6 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $message = "Error: " . $sql . "<br>" . $conn->error;
         }
+         // Redirect with query parameter for the message
+    header("Location: dashboard.php?page=footer&message=" . urlencode($message));
+    exit(); // Ensure no further code is executed after redirection
     }
 }
 
@@ -48,15 +51,18 @@ $conn->close();
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
-        <h1 class="text-2xl font-bold mb-6 text-gray-800">Create Contacts</h1>
-        <?php if (!empty($message)) : ?>
-            <div class="mb-4 p-4 text-white <?php echo strpos($message, 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md">
-                <?php echo $message; ?>
-            </div>
-        <?php endif; ?>
+    <div class="mx-auto mt-36 max-w-lg w-full bg-white p-8 rounded-lg shadow-lg">
 
-        <form action="contact.php" method="POST" class="space-y-6">
+
+        <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">Create Contacts</h1>
+        <!-- Display message if it exists -->
+            <?php if (isset($_GET['message'])): ?>
+              <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md text-center">
+                <?php echo htmlspecialchars($_GET['message']); ?>
+              </div>
+            <?php endif; ?>
+        
+        <form action="contact.php?page=footer" method="POST" class="pt-5 space-y-6">
             <div>
                 <label for="img" class="block text-lg font-medium text-gray-700">Image Name</label>
                 <input type="text" name="img" id="img" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
@@ -67,8 +73,8 @@ $conn->close();
                 <input type="text" name="link" id="link" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
             </div>
 
-            <div>
-                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <div class="text-center">
+                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gradient-to-t from-[#f77062] via-[#f77062] to-[#fe4444]">
                     Add Contact
                 </button>
             </div>

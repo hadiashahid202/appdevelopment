@@ -369,7 +369,7 @@ body{
 	font-size: 20.59px;
 }
 
-.basic ul{
+/*.basic ul{
 	margin-bottom: 110px;
 }
 
@@ -379,6 +379,12 @@ body{
 
 .premium ul{
 	margin-bottom: 60px;
+}
+*/
+.features-btn{
+	display: flex;
+	flex-direction: column;
+	row-gap: 90px;
 }
 
 .package .package-btn{
@@ -446,7 +452,7 @@ body{
 
 .ribbon-top-right span {
   left: -25px;
-  top: 25px;
+  top: 0px;
   transform: rotate(45deg);
 }
 

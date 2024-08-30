@@ -1,8 +1,31 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 30, 2024 at 09:23 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `businessdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aboutme`
+--
 
 CREATE TABLE `aboutme` (
   `id` int(11) NOT NULL,
@@ -12,13 +35,20 @@ CREATE TABLE `aboutme` (
   `classes` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `aboutme`
+--
 
 INSERT INTO `aboutme` (`id`, `img`, `title`, `desc`, `classes`) VALUES
 (1, 'social-media', '25,000+', 'Social media audience', 'media'),
 (2, 'social', '150+', 'Clients', 'media social'),
 (5, 'checkout', '700+', 'Projects completed', 'media checkout');
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `about_section`
+--
 
 CREATE TABLE `about_section` (
   `id` int(11) NOT NULL,
@@ -30,15 +60,23 @@ CREATE TABLE `about_section` (
   `desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `about_section`
+--
 
 INSERT INTO `about_section` (`id`, `heading`, `title`, `paragraph`, `link`, `img`, `desc`) VALUES
 (2, 'Hadia Shahid', 'DESIGN LIKE A PRO', 'Hello my name is HADIA SHAHID', 'order', 'vector', 'order here'),
 (3, 'Hadia Shahid', 'DESIGN LIKE A PRO and make money', 'Hello my name is hadia shahid', 'Order', 'vector', 'order here'),
 (4, 'Hadia Shahid', 'DESIGN LIKE A PRO <br> and make money', 'Hello my name is hadia shahid', 'order', 'vector', 'order here'),
 (5, 'Hadia Shahid', 'DESIGN LIKE PRO', 'Hello my name is hadia shahid', 'Order', 'vector', 'order here'),
-(6, 'Hadia Shahid', 'DESIGN LIKE A PRO', 'Hello my name is hadia shahid', 'Order', 'vector', 'order here');
+(6, 'Hadia Shahid', 'DESIGN LIKE A PRO', 'Hello my name is hadia shahid', 'Order', 'vector', 'order here'),
+(9, 'Hadia Shahid', 'Hadia Shahid', 'Hello my name is hadia', 'Order', 'vector', 'order here');
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `contacts`
+--
 
 CREATE TABLE `contacts` (
   `id` int(11) NOT NULL,
@@ -46,14 +84,20 @@ CREATE TABLE `contacts` (
   `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
+--
+-- Dumping data for table `contacts`
+--
 
 INSERT INTO `contacts` (`id`, `img`, `link`) VALUES
 (12, 'facebook', 'https://www.facebook.com'),
 (13, 'insta', 'https://www.instagram.com'),
-(15, 'linkedin', 'https://pk.linkedin.com');
+(53, 'facebook', 'https://www.facebook.com');
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `icons`
+--
 
 CREATE TABLE `icons` (
   `id` int(11) NOT NULL,
@@ -62,6 +106,9 @@ CREATE TABLE `icons` (
   `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `icons`
+--
 
 INSERT INTO `icons` (`id`, `about_section_id`, `img`, `link`) VALUES
 (4, 2, 'instagram-icon', 'https://facebook.com'),
@@ -78,8 +125,16 @@ INSERT INTO `icons` (`id`, `about_section_id`, `img`, `link`) VALUES
 (15, 5, 'linkedin-icon', ' https://linkedin.com'),
 (16, 6, 'instagram-icon', 'https://facebook.com'),
 (17, 6, 'facebook-icon', ' https://instagram.com'),
-(18, 6, 'linkedin-icon', ' https://linkedin.com');
+(18, 6, 'linkedin-icon', ' https://linkedin.com'),
+(23, 9, 'facebook-icon', 'https://facebook.com'),
+(24, 9, 'instagram-icon', 'https://instagram.com'),
+(25, 9, 'linkedin-icon', 'https://linkedin.com');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu_items`
+--
 
 CREATE TABLE `menu_items` (
   `id` int(11) NOT NULL,
@@ -88,6 +143,9 @@ CREATE TABLE `menu_items` (
   `link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `menu_items`
+--
 
 INSERT INTO `menu_items` (`id`, `about_section_id`, `list_item`, `link`) VALUES
 (6, 2, 'Home', '#hero-section'),
@@ -119,8 +177,19 @@ INSERT INTO `menu_items` (`id`, `about_section_id`, `list_item`, `link`) VALUES
 (32, 6, ' Services', ' #services-section'),
 (33, 6, ' Pricing', '#packages-section'),
 (34, 6, ' Contact', ' #footer-section'),
-(35, 6, ' Dashboard', 'forms/dashboard.php');
+(35, 6, ' Dashboard', 'forms/dashboard.php'),
+(48, 9, 'Home', '#hero-section'),
+(49, 9, ' About', '#aboutme-section'),
+(50, 9, ' Services', '#services-section'),
+(51, 9, ' Pricing', '#packages-section'),
+(52, 9, ' Contact', '#footer-section'),
+(53, 9, ' Dashboard', 'forms/dashboard.php');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `packages`
+--
 
 CREATE TABLE `packages` (
   `id` int(11) NOT NULL,
@@ -132,12 +201,20 @@ CREATE TABLE `packages` (
   `features` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `packages`
+--
 
 INSERT INTO `packages` (`id`, `title`, `price`, `button_text`, `classes`, `popular`, `features`) VALUES
 (4, 'Basic', '200$', 'Buy now', 'basic', 0, 'Hadia Shahid,Fahid Javid'),
 (5, 'Standard', '500$', 'Buy now', 'standard', 1, 'Hadia Shahid,Fahid Javid,QuraTullain'),
 (6, 'Premium', '1k$', 'Buy now', 'premium', 0, 'Hadia Shahid,Fahid Javid,QuraTullain,Junaid Shakir');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
 
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
@@ -146,12 +223,19 @@ CREATE TABLE `services` (
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `services`
+--
 
 INSERT INTO `services` (`id`, `title`, `image`, `description`) VALUES
-(13, 'UI/UX Design', 'uiux-design', 'Hello....this is ui/ux design section of services'),
 (16, 'Web design', 'web-design', 'Hello this is web design section of services'),
 (17, 'App Design', 'app-design', 'Hello this is a app design section of services');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `social_media`
+--
 
 CREATE TABLE `social_media` (
   `id` int(11) NOT NULL,
@@ -162,7 +246,9 @@ CREATE TABLE `social_media` (
   `classes` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
+--
+-- Dumping data for table `social_media`
+--
 
 INSERT INTO `social_media` (`id`, `about_section_id`, `image`, `desc`, `cross_img`, `classes`) VALUES
 (2, 2, 'photoshop', 'Photoshop', 'cross', 'photoshop'),
@@ -172,8 +258,16 @@ INSERT INTO `social_media` (`id`, `about_section_id`, `image`, `desc`, `cross_im
 (6, 5, 'Figma', 'Figma', 'cross', 'figma'),
 (7, 6, 'photoshop', 'Photoshop', 'cross', 'photoshop'),
 (8, 6, 'adobe', 'Illustrator', 'cross', 'adobe'),
-(9, 6, 'Figma', 'Figma', 'cross', 'figma');
+(9, 6, 'Figma', 'Figma', 'cross', 'figma'),
+(12, 9, 'photoshop', 'Photoshop', 'cross', 'photoshop'),
+(13, 9, 'adobe', 'Illustrator', 'cross', 'adobe'),
+(14, 9, 'Figma', 'Figma', 'cross', 'figma');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
@@ -184,6 +278,9 @@ CREATE TABLE `users` (
   `submitted_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `users`
+--
 
 INSERT INTO `users` (`id`, `name`, `email`, `subject`, `message`, `submitted_at`) VALUES
 (15, 'hadia shahid', 'hadiashahid202@gmail.com', ' contact-form', 'my name is hadia', '2024-08-23 18:15:21'),
@@ -570,85 +667,148 @@ INSERT INTO `users` (`id`, `name`, `email`, `subject`, `message`, `submitted_at`
 (421, 'Hadia Shahid', 'fahidjavid@gmail.com', 'hello', 'hello', '2024-08-24 14:09:38'),
 (422, 'Hadia Shahid', 'fahidjavid@gmail.com', 'hello', 'hello', '2024-08-24 14:12:56');
 
+--
+-- Indexes for dumped tables
+--
 
+--
+-- Indexes for table `aboutme`
+--
 ALTER TABLE `aboutme`
   ADD PRIMARY KEY (`id`);
 
-
+--
+-- Indexes for table `about_section`
+--
 ALTER TABLE `about_section`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `contacts`
+--
 ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `icons`
+--
 ALTER TABLE `icons`
   ADD PRIMARY KEY (`id`),
   ADD KEY `about_section_id` (`about_section_id`);
 
+--
+-- Indexes for table `menu_items`
+--
 ALTER TABLE `menu_items`
   ADD PRIMARY KEY (`id`),
   ADD KEY `about_section_id` (`about_section_id`);
 
+--
+-- Indexes for table `packages`
+--
 ALTER TABLE `packages`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `services`
+--
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `social_media`
+--
 ALTER TABLE `social_media`
   ADD PRIMARY KEY (`id`),
   ADD KEY `about_section_id` (`about_section_id`);
 
-
+--
+-- Indexes for table `users`
+--
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
+--
+-- AUTO_INCREMENT for table `aboutme`
+--
 ALTER TABLE `aboutme`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
-
+--
+-- AUTO_INCREMENT for table `about_section`
+--
 ALTER TABLE `about_section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
-
-ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
-
-ALTER TABLE `icons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
-
-ALTER TABLE `menu_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
-
-ALTER TABLE `packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
-
-ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
-
-ALTER TABLE `social_media`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
+--
+-- AUTO_INCREMENT for table `icons`
+--
+ALTER TABLE `icons`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- AUTO_INCREMENT for table `packages`
+--
+ALTER TABLE `packages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT for table `social_media`
+--
+ALTER TABLE `social_media`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=423;
 
+--
+-- Constraints for dumped tables
+--
 
+--
+-- Constraints for table `icons`
+--
 ALTER TABLE `icons`
   ADD CONSTRAINT `icons_ibfk_1` FOREIGN KEY (`about_section_id`) REFERENCES `about_section` (`id`) ON DELETE CASCADE;
 
-
+--
+-- Constraints for table `menu_items`
+--
 ALTER TABLE `menu_items`
   ADD CONSTRAINT `menu_items_ibfk_1` FOREIGN KEY (`about_section_id`) REFERENCES `about_section` (`id`) ON DELETE CASCADE;
 
-
+--
+-- Constraints for table `social_media`
+--
 ALTER TABLE `social_media`
   ADD CONSTRAINT `social_media_ibfk_1` FOREIGN KEY (`about_section_id`) REFERENCES `about_section` (`id`) ON DELETE CASCADE;
 COMMIT;
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

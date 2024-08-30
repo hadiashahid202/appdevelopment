@@ -29,7 +29,8 @@
                     <h3 class="title"><?php echo $row['title']; ?></h3>
                     <hr>
                     <h3 class="head"><?php echo $row['price']; ?></h3>
-                    <ul>
+                    <div class="features-btn">
+                        <ul>
                         <?php foreach ($features as $feature) { ?>
                             <li><i class="fa-solid fa-circle-check"></i> <?php echo $feature; ?></li>
                         <?php } ?>
@@ -37,6 +38,8 @@
                     <div class="package-btn">
                         <a href="#"><?php echo $row['button_text']; ?></a>
                     </div>
+                    </div>
+                    
                 </div>
                 <?php
             }

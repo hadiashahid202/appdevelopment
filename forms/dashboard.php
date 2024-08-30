@@ -3,23 +3,32 @@
 <head>
   <title>Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <!-- <link rel="stylesheet" type="text/css" href="https://img.icons8.com/ios/50/home--v1.png"> -->
+
 </head>
 <body class="h-full flex flex-col">
   <div class="min-h-full flex flex-col">
-    <nav class="bg-gray-800">
+    <nav class="bg-[#161424]">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+              <!-- <img class="h-8 w-8" src="../assets/img/icons/home.png" alt="Your Company"> -->
+              <!-- <i class="fa-thin fa-house text-gray-800 text-2xl"></i> -->
+             <a href="../index.php"><img width="28" height="28" src="https://img.icons8.com/color/48/home--v1.png" alt="home--v1"/></a>
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
-                <a href="dashboard.php?page=hero-section" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Hero-Section</a>
+                <a href="dashboard.php?page=hero-section" class="rounded-md bg-[#161424] px-3 py-2 text-sm font-medium text-white" aria-current="page">Hero-Section</a>
+                <input type="hidden" name="page" value="hero-section">
+
                 <a href="dashboard.php?page=aboutme" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Aboutme</a>
                 <a href="dashboard.php?page=services" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Services</a>
                 <a href="dashboard.php?page=packages" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Packages</a>
                 <a href="dashboard.php?page=footer" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Footer</a>
+                <input type="hidden" name="page" value="footer">
+
               </div>
             </div>
           </div>
@@ -38,7 +47,7 @@
                   <button type="button" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <img class="h-8 w-8 rounded-full" src="../assets/img/icons/paris.png" alt="">
                   </button>
                 </div>
                 <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
@@ -73,7 +82,7 @@
         <div class="border-t border-gray-700 pb-3 pt-4">
           <div class="flex items-center px-5">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+              <img class="h-10 w-10 rounded-full" src="../assets/img/icons/social.png" alt="">
             </div>
             <div class="ml-3">
               <div class="text-base font-medium leading-none text-white">Tom Cook</div>
@@ -96,10 +105,10 @@
       </div>
     </nav>
 
-    <main class="flex-grow">
+    <main class="flex-grow bg-gradient-to-t from-[#f77062] via-[#f77062] to-[#fe5196]">
       <?php
         // Include the section based on the page parameter
-        $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
+        $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard.php';
 
         switch ($page) {
             case 'hero-section':
@@ -121,10 +130,11 @@
                 echo "<h1>Welcome to the Dashboard</h1>";
                 break;
         }
+        
       ?>
     </main>
 
-    <footer class="bg-gray-800 py-4">
+    <footer class="bg-[#161424] py-4">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <p class="text-center text-gray-400">© 2024 Your Company. All rights reserved.</p>
       </div>

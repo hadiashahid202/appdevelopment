@@ -32,6 +32,9 @@
 
             $stmt->close();
         }
+         // Redirect with query parameter for the message
+    header("Location: dashboard.php?page=aboutme&message=" . urlencode($message));
+    exit(); // Ensure no further code is executed after redirection
     }
 
     $conn->close();
@@ -44,15 +47,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
+    <div class="mb-5 mt-5 mx-auto max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
          <h1 class="text-2xl font-bold mb-6 text-gray-800 text-center">Create About Me Item</h1>
-        <?php if (!empty($message)) : ?>
-            <div class="mb-4 p-4 text-white <?php echo strpos($message, 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md">
-                <?php echo $message; ?>
-            </div>
-        <?php endif; ?>
-
-        <form action="aboutme.php" method="POST" class="space-y-6">
+         <!-- Display message if it exists -->
+            <?php if (isset($_GET['message'])): ?>
+              <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md text-center">
+                <?php echo htmlspecialchars($_GET['message']); ?>
+              </div>
+            <?php endif; ?>
+        <form action="aboutme.php?page=aboutme" method="POST" class="space-y-6">
             <div>
                 <label for="img" class="block text-lg font-medium text-gray-700">Image Name</label>
                 <input type="text" name="img" id="img" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
@@ -65,7 +68,7 @@
 
             <div>
                 <label for="desc" class="block text-lg font-medium text-gray-700">Description</label>
-                <textarea name="desc" id="desc" rows="4" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
+                <textarea name="desc" id="desc" rows="4" required class="mt-1 block w-full p-2 border resize-none border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></textarea>
             </div>
 
             <div>
@@ -73,8 +76,8 @@
                 <input type="text" name="classes" id="classes" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
             </div>
 
-            <div class="pt-5">
-                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <div class="pt-5 text-center">
+                <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white  focus:outline-none bg-gradient-to-t from-[#f77062] via-[#f77062] to-[#fe4444]">
                     Add Item
                 </button>
             </div>
