@@ -212,7 +212,7 @@ $conn->close();
                         <input type="text" name="social_media[0][classes]" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm" placeholder="Classes" required>
                     </div>
                 </div>
-                <button type="button" id="add_social_media" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-700 focus:outline-none bg-gradient-to-t from-[#f77062] via-[#f77062] to-[#fe8444] focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Add Another</button>
+                <button type="button" id="add_social_media" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-700 focus:outline-none bg-gradient-to-t from-[#f77062] via-[#f77062] to-[#fe8444] ">Add Another</button>
             </div>
 
             <!-- Centered Submit Button -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2024 at 09:23 PM
+-- Generation Time: Aug 31, 2024 at 07:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -70,7 +70,8 @@ INSERT INTO `about_section` (`id`, `heading`, `title`, `paragraph`, `link`, `img
 (4, 'Hadia Shahid', 'DESIGN LIKE A PRO <br> and make money', 'Hello my name is hadia shahid', 'order', 'vector', 'order here'),
 (5, 'Hadia Shahid', 'DESIGN LIKE PRO', 'Hello my name is hadia shahid', 'Order', 'vector', 'order here'),
 (6, 'Hadia Shahid', 'DESIGN LIKE A PRO', 'Hello my name is hadia shahid', 'Order', 'vector', 'order here'),
-(9, 'Hadia Shahid', 'Hadia Shahid', 'Hello my name is hadia', 'Order', 'vector', 'order here');
+(9, 'Hadia Shahid', 'Hadia Shahid', 'Hello my name is hadia', 'Order', 'vector', 'order here'),
+(10, 'Hadia Shahid', 'HADIA SHAHID', 'Hello my name is hadia shahid', 'Order', 'vector', 'order here');
 
 -- --------------------------------------------------------
 
@@ -128,7 +129,10 @@ INSERT INTO `icons` (`id`, `about_section_id`, `img`, `link`) VALUES
 (18, 6, 'linkedin-icon', ' https://linkedin.com'),
 (23, 9, 'facebook-icon', 'https://facebook.com'),
 (24, 9, 'instagram-icon', 'https://instagram.com'),
-(25, 9, 'linkedin-icon', 'https://linkedin.com');
+(25, 9, 'linkedin-icon', 'https://linkedin.com'),
+(26, 10, 'facebook-icon', 'https://facebook.com'),
+(27, 10, 'instagram-icon', 'https://instagram.com'),
+(28, 10, 'linkedin-icon', 'https://linkedin.com');
 
 -- --------------------------------------------------------
 
@@ -183,7 +187,13 @@ INSERT INTO `menu_items` (`id`, `about_section_id`, `list_item`, `link`) VALUES
 (50, 9, ' Services', '#services-section'),
 (51, 9, ' Pricing', '#packages-section'),
 (52, 9, ' Contact', '#footer-section'),
-(53, 9, ' Dashboard', 'forms/dashboard.php');
+(53, 9, ' Dashboard', 'forms/dashboard.php'),
+(54, 10, 'Home', '#about'),
+(55, 10, ' About', '#aboutme-section'),
+(56, 10, ' Services', '#services-section'),
+(57, 10, ' Pricing', '#packages-section'),
+(58, 10, ' Contact', '#footer-section'),
+(59, 10, ' Dashboard', 'forms/dashboard.php');
 
 -- --------------------------------------------------------
 
@@ -261,7 +271,10 @@ INSERT INTO `social_media` (`id`, `about_section_id`, `image`, `desc`, `cross_im
 (9, 6, 'Figma', 'Figma', 'cross', 'figma'),
 (12, 9, 'photoshop', 'Photoshop', 'cross', 'photoshop'),
 (13, 9, 'adobe', 'Illustrator', 'cross', 'adobe'),
-(14, 9, 'Figma', 'Figma', 'cross', 'figma');
+(14, 9, 'Figma', 'Figma', 'cross', 'figma'),
+(15, 10, 'photoshop', 'Photoshop', 'cross', 'photoshop'),
+(16, 10, 'adobe', 'Illustrator', 'cross', 'adobe'),
+(17, 10, 'Figma', 'Figma', 'cross', 'figma');
 
 -- --------------------------------------------------------
 
@@ -742,7 +755,7 @@ ALTER TABLE `aboutme`
 -- AUTO_INCREMENT for table `about_section`
 --
 ALTER TABLE `about_section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `contacts`
@@ -754,13 +767,13 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `icons`
 --
 ALTER TABLE `icons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `packages`
@@ -778,7 +791,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `social_media`
 --
 ALTER TABLE `social_media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
