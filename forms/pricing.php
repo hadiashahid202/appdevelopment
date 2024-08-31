@@ -63,7 +63,7 @@
     <form action="pricing.php?page=packages" method="POST" class="max-w-4xl mx-auto mb-5 mt-5 space-y-6 bg-white p-8 rounded-lg shadow-lg">
         <!-- Display message if it exists -->
         <?php if (isset($_GET['message'])): ?>
-          <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md text-center">
+          <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-gradient-to-tr from-[#118ab2] via-[#06d6a0] to-[#ffd166]' : 'bg-red-500'; ?> rounded-md text-center">
             <?php echo htmlspecialchars($_GET['message']); ?>
           </div>
         <?php endif; ?>

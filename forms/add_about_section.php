@@ -122,7 +122,7 @@ $conn->close();
     <div class="max-w-7xl mt-5 mb-5 mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-300">
      <!-- Display message if it exists -->
         <?php if (isset($_GET['message'])): ?>
-          <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md text-center">
+          <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-gradient-to-tr from-[#118ab2] via-[#06d6a0] to-[#ffd166]' : 'bg-red-500'; ?> rounded-md text-center">
             <?php echo htmlspecialchars($_GET['message']); ?>
           </div>
         <?php endif; ?>

@@ -57,7 +57,7 @@ $conn->close();
         <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">Create Contacts</h1>
         <!-- Display message if it exists -->
             <?php if (isset($_GET['message'])): ?>
-              <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-green-500' : 'bg-red-500'; ?> rounded-md text-center">
+              <div class="mt-4 p-4 text-white <?php echo strpos($_GET['message'], 'Error') === false ? 'bg-gradient-to-tr from-[#118ab2] via-[#06d6a0] to-[#ffd166]' : 'bg-red-500'; ?> rounded-md text-center">
                 <?php echo htmlspecialchars($_GET['message']); ?>
               </div>
             <?php endif; ?>
